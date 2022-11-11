@@ -1,4 +1,5 @@
 from flask import Flask, jsonify,redirect,url_for,request, render_template
+import requests
 app = Flask(__name__)
 
 @app.route('/hello')
@@ -73,6 +74,11 @@ def hello_if():
     value=40
     return render_template('condition.html',data=value)
 
+# 크롤링 데이터를 그대로 뿌려주기
+@app.route('/google')
+def get_google():
+    response=requests.get("http://www.google.co.kr")
+    return response.text
 
 
 
