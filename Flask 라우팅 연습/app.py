@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify,redirect,url_for,request
 app = Flask(__name__)
 
 @app.route('/hello')
@@ -30,6 +30,22 @@ def hello_json():
 def server_info():
     data={'server_name':'127.0.0.1', 'server_port':'5000'}
     return jsonify(data)
+
+
+#  get/post 구현하기 (postman으로 확인)
+
+@app.route('/success/<name>') #로그인 성공시 해당 페이지로 이동
+def success(name):
+    return 'welcome %s' % name
+
+@app.route('/login',methods=['POST','GET'])
+def login():
+    if request.method=='POST':
+        user=request.form['myName']
+        return redirect(url_for('success',name=user)) # postman에서 key:myName, value:lucy하고 send하면 success 페이지로 redirect된 걸 확인할 수 있음
+    else:
+        user=request.args.get('myName')
+        return redirect(url_for('success',name=user))
 
 
 
