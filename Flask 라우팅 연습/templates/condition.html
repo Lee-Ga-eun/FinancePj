@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="main">
+
+        {% if data>=30 %}
+        <h3>30보다 데이터가 큽니다</h3>
+        {% elif data>25 %}
+        <h3>30보단 크지 않지만 25보단 큽니다</h3>
+        {% else %}
+        <h3>{{data}}</h3>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-from flask import Flask, jsonify,redirect,url_for,request
+from flask import Flask, jsonify,redirect,url_for,request, render_template
 app = Flask(__name__)
 
 @app.route('/hello')
@@ -46,6 +46,33 @@ def login():
     else:
         user=request.args.get('myName')
         return redirect(url_for('success',name=user))
+
+# html과 렌더링 (html파일은 templates 폴더에 있어야 한다)
+@app.route('/html_test')
+def hello_html():
+    return render_template('practice.html')
+
+
+#플라스크는 flask 프로그래밍 로직에 따라 HTML 태그를 만들거나 HTML 내용을 채우기 위해 Jinja2 템플릿 엔진을 사용할 수 있다
+# jinja2 engine을 사용하여 템플릿을 만들고 템플릿 안의 값을 채워서 렌더링
+
+@app.route('/hello/<user>')
+def hello_name(user):
+    return render_template('variable.html', name=user)
+
+
+# 반복문 연습
+@app.route('/hello_loop')
+def hello_names():
+    value_list=['이름a','이름b','이름c']
+    return render_template('variable.html',values=value_list)
+
+# 조건문 연습
+@app.route('/hello_if')
+def hello_if():
+    value=40
+    return render_template('condition.html',data=value)
+
 
 
 
