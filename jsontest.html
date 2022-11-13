@@ -51,7 +51,7 @@
             <div class="btn-group" role="group" aria-label="Basic example" style="padding: 0% 20%"> \
                 <button type="button" class="btn btn-secondary" disabled style="width:170px; border-radius:5px;"></button> \
                 <button type="button" class="btn btn-light" disabled style="width:130px; border-radius:5px;">${data[i].종목명}</button> \
-                <button type="button" class="btn btn-primary" disabled style="width:170px; border-radius:5px;">+${parseInt(data[i].PER-9)}</button> \
+                <button type="button" class="btn btn-primary" disabled style="width:170px; border-radius:5px;">${data[i].PER} (+${parseInt(data[i].PER-9)})</button> \
               </div> \
               <div style="margin-top:5px;"> </div> \
             </div>`);
@@ -60,7 +60,7 @@
                 console.log(`${data[i].종목명}의 PER은 평균 PER 9보다 작습니다`);
                 document.write(`<div class="iterateButtonGroup"> \
             <div class="btn-group" role="group" aria-label="Basic example" style="padding: 0% 20%"> \
-                <button type="button" class="btn btn-secondary" disabled style="width:170px; border-radius:5px;">${parseInt(data[i].PER-9.0)}</button> \
+                <button type="button" class="btn btn-secondary" disabled style="width:170px; border-radius:5px;">${data[i].PER} (${parseInt(data[i].PER-9.0)})</button> \
                 <button type="button" class="btn btn-light" disabled style="width:130px; border-radius:5px;">${data[i].종목명}</button> \
                 <button type="button" class="btn btn-primary" disabled style="width:170px; border-radius:5px;"></button> \
               </div> \
