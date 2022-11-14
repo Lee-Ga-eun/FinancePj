@@ -60,7 +60,22 @@
 
         //반복문을...... if k===9: <div>로 하위 10% 박스를 추가 
 
+            // <div class="under20">
+            //     <p style="border-style:dashed; color:orange; margin:0% 20%; border-radius: 5px;">하위 20%</p>
+            // </div>
+
         for (let i=0;i<data.length;i++){
+
+            if(i===(parseInt(data.length*0.8))){
+                document.write(`
+             <div class="under20"> \
+                <br>\
+                <p style="border-style:dashed; color:orange; margin:0% 20%; border-radius: 5px; width:470px;  text-align:center;">하위 20%</p> \
+                <br>\
+            </div>
+                `);
+            }
+            
             let per=data[i].PER;
             // console.log(per);
             console.log(`종목명:${data[i].종목명},PER:${data[i].PER}`);
