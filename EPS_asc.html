@@ -197,12 +197,9 @@
                 </ul>
               </div>
 
-
-
-
               <!-- <h3>2022년 09월 평균 PER:9</h3> -->
         <div class="container-fluid pt-4 px-4">
-            <!-- margin-bottom:10px; font-size:x-large; padding-left:270px; -->
+                
             <h2 style="margin-bottom:20px; font-size:x-large; padding-left:40%; color:cornflowerblue;">
                 KOSPI100의 EPS
                 <div style="margin-top:5px;"> </div>
@@ -224,7 +221,7 @@
 
                 console.log("-제거",sortData);
 
-                sortData=sortData.sort((a,b)=>parseFloat((b.EPS).replace(",",""))-parseFloat((a.EPS).replace(",","")));
+                sortData=sortData.sort((a,b)=>parseFloat((a.EPS).replace(",",""))-parseFloat((b.EPS).replace(",","")));
                 console.log("정렬된 배열",sortData);
 
                 //sortData로 정렬 완료
